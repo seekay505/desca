@@ -2,15 +2,16 @@
 
 * {
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 html, body {
+    scroll-behavior: smooth;
     margin: 0;
     height: 100%;
     width: 100%;
     font-family: 'Poppins', serif;
     color: #E9ECF5;
+    min-width: 240px;
 }
 
 h3 {
@@ -25,8 +26,8 @@ body {
 ul {
     list-style: none;
     width: 100%;
-    padding: .25rem;
     margin: 0;
+    padding: 0;
 }
 
 li {
@@ -40,19 +41,30 @@ a {
     font-size: .75rem;
 }
 
+
+/* nav start */
 .header {
     background-color: #2E2E2E;
 }
 
+.nav {
+    padding: .25rem;
+}
+/* nav end */
+
+/* main image start */
 .hero {
     width: 100%;
-    min-height: 8rem;
-    height: clamp(8rem, 65vw, 40rem);
+    min-width: 250px;
+    min-height: 15rem;
+    height: clamp(20rem, 70vw, 35rem);
     background-image: 
         linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
         url("./imgs/boards-and-food.jpg");
     background-position: center 20%;
-    background-size: clamp(20rem, 60vw, 60rem), clamp(20rem, 60vw, 60rem);
+    /* background-size: clamp(25rem, calc(25rem + 80vw), 100vw),
+        clamp(25rem, calc(25rem + 80vw), 100vw); */
+    background-size: max(250px, 100vw) max(250px, 100vw);
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
@@ -64,16 +76,21 @@ a {
     height: 1.5rem;
     color: white;
 }
+/* main image end */
 
+/* product section start */
 section {
     width: 100%;
 }
 
 .product-section {
     background-color: #D1DDE5;
-    min-height: 17rem;
+    min-height: 25rem;
     display: flex;
+    align-items: center;
     flex-grow: 2;
+    padding-left: 1rem;
+    padding-rigth: 1rem;
 }
 
 .content {
@@ -83,7 +100,6 @@ section {
 
 .row {
     min-height: 10rem;
-    /* border: 1px red solid; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -92,7 +108,7 @@ section {
 }
 
 h3 {
-    font-size: .75rem;
+    font-size: 1rem;
     text-align: center;
     display: inline-block;
     color: #2E2E2E;
@@ -101,10 +117,10 @@ h3 {
 }
 
 .row-img {
-    height: 10rem;
-    width: 10rem;
+    height: 15rem;
+    width: 15rem;
     border-radius: .25rem;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 .row-heading {
@@ -121,26 +137,42 @@ h3 {
 .row-copy > p, .call-to-action {
     text-align: center;
     margin: 0;
-    font-size: .5rem;
+    font-size: .75rem;
     width: 100%;
     color: #2E2E2E;
 }
-.call-to-action {
-    text-decoration: underline;
-}
+.btn {
 
+    /* width: calc(min-content + 10rem);
+    height: calc(min-content + 2rem); */
+    background-color: #2E2E2E;
+    padding: .1rem 1rem;
+    border-radius: 2rem;
+    /* border: 5px solid #D1DDE5; */
+    border: 3px solid #E9ECF5;
+    transition: transform 300ms ease-in-out;
+}
+.btn:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: transform 300ms ease-in-out;
+}
+.call-to-action {
+    /* text-decoration: underline; */
+    color: #E9ECF5;
+}
+/* product section end */
+
+/* footer start */
 .footer {
     background-color: #2E2E2E;
     height: min-content;
     margin: 0;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
 }
 
 .footer-content {
-    /* border: 3px solid green; */
     margin-top: .5rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -149,13 +181,22 @@ h3 {
     color: #E9ECF5;
     margin: 0;
     text-align: center;
-    font-size: .75rem;
 }
 
 .footer-heading {
+    font-size: 1rem;
     margin-bottom: .5rem;
 }
 
 .footer-content > p, .footer-content > p > a{
-    font-size: .5rem;
+    font-size: .75rem;
 }
+/* footer end */
+
+/* responsive start */
+@media (min-width: 500px) {
+    html {
+        font-size: 32px;
+    }
+}
+/* responsive end */
